@@ -7,9 +7,9 @@
 #ifndef MyAppVersion
 #define MyAppVersion   "1.1.6"
 #endif
-#define MyAppPublisher "Xenon"
+#define MyAppPublisher "Xenoncode-dev"
 #define MyAppExeName   "flick.exe"
-#define MyAppURL       "https://github.com/Xenon/Flick"
+#define MyAppURL       "https://github.com/Xenoncode-dev/Flick"
 
 [Setup]
 AppId={{9B8C7D6E-5F4E-3D2C-1B0A-9F8E7D6C5B4A}
