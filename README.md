@@ -39,14 +39,14 @@ Every tagged release triggers a CI build that produces installers for all platfo
 | macOS | DMG + ZIP (both Apple Silicon and Intel) |
 | iOS | Sideloadable IPA (unsigned) |
 
-Check the [Releases](https://github.com/Xenon/Flick/releases) page.
+Check the [Releases](https://github.com/Xenoncode-dev/Flick/releases) page.
 
 ## Building from source
 
 You'll need Flutter 3.x (Dart 3.11+).
 
 ```bash
-git clone https://github.com/Xenon/Flick.git
+git clone https://github.com/Xenoncode-dev/Flick.git
 cd Flick
 flutter pub get
 flutter run
