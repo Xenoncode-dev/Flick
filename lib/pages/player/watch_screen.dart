@@ -120,11 +120,11 @@ class _WatchScreenState extends State<WatchScreen>
       final a = allAddons[i];
       map[a.manifest.name.toLowerCase()] = i;
       map[a.manifest.id.toLowerCase()] = i;
-      if (a.manifest.id == 'builtin.playtorriohttp' || a.baseUrl == 'builtin:playtorriohttp') {
-        map['playtorriohttp'] = i;
+      if (a.manifest.id == 'builtin.flickhttp' || a.baseUrl == 'builtin:flickhttp') {
+        map['flickhttp'] = i;
       }
-      if (a.manifest.id == 'builtin.playtorrio' || a.baseUrl == 'builtin:playtorrio') {
-        map['playtorrio'] = i;
+      if (a.manifest.id == 'builtin.flick' || a.baseUrl == 'builtin:flick') {
+        map['flick'] = i;
       }
     }
     return _cachedAddonOrder = map;
@@ -304,11 +304,11 @@ class _WatchScreenState extends State<WatchScreen>
     }
 
     // Filter by active status of built-in providers
-    if (!AddonManager.instance.isPlayTorrioActive) {
+    if (!AddonManager.instance.isFlickActive) {
       list = list.where((s) => !s.isTorrent || s.isDebrid).toList();
     }
-    if (!AddonManager.instance.isPlayTorrioHttpActive) {
-      list = list.where((s) => s.addonName.toLowerCase() != 'playtorriohttp').toList();
+    if (!AddonManager.instance.isFlickHttpActive) {
+      list = list.where((s) => s.addonName.toLowerCase() != 'flickhttp').toList();
     }
 
     // Cached dynamic addon priority lookup from user's installed addons order
@@ -316,8 +316,8 @@ class _WatchScreenState extends State<WatchScreen>
     final isCustomBuiltin = BuiltinProvidersSettingsService.instance.isCustom;
 
     list.sort((a, b) {
-      final isHttpA = a.addonName.toLowerCase() == 'playtorriohttp';
-      final isHttpB = b.addonName.toLowerCase() == 'playtorriohttp';
+      final isHttpA = a.addonName.toLowerCase() == 'flickhttp';
+      final isHttpB = b.addonName.toLowerCase() == 'flickhttp';
 
       // When custom Built-in providers mode is active, provider rank strictly dictates order
       if (isCustomBuiltin && isHttpA && isHttpB) {
@@ -2999,10 +2999,10 @@ class _SourceCardState extends State<_SourceCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          (s.addonName.toLowerCase() == 'playtorriohttp' &&
+                          (s.addonName.toLowerCase() == 'flickhttp' &&
                                   s.providerName != null &&
                                   s.providerName!.isNotEmpty)
-                              ? 'PlayTorrioHTTP · ${s.providerName}'
+                              ? 'FlickHTTP · ${s.providerName}'
                               : (s.name != null && s.name!.isNotEmpty
                                   ? s.name!
                                   : s.addonName),
@@ -3107,8 +3107,8 @@ class _AddonSourceIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final nameLower = addonName.trim().toLowerCase();
-    final isBuiltIn = nameLower == 'playtorrio' ||
-        nameLower == 'playtorriohttp' ||
+    final isBuiltIn = nameLower == 'flick' ||
+        nameLower == 'flickhttp' ||
         nameLower.startsWith('builtin');
 
     if (isBuiltIn) {

@@ -134,7 +134,7 @@ class DownloadTask {
       name: 'Downloaded',
       title: title,
       url: targetFilePath,
-      addonName: 'PlayTorrio Offline',
+      addonName: 'Flick Offline',
     );
   }
 

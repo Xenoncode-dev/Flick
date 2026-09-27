@@ -25,12 +25,12 @@ class AddonManager {
 
   void _ensureBuiltInsExist() {
     bool changed = false;
-    if (!_addons.any((a) => a.manifest.id == 'builtin.playtorrio' || a.baseUrl == 'builtin:playtorrio')) {
-      _addons.add(playTorrioBuiltin);
+    if (!_addons.any((a) => a.manifest.id == 'builtin.flick' || a.baseUrl == 'builtin:flick')) {
+      _addons.add(flickBuiltin);
       changed = true;
     }
-    if (!_addons.any((a) => a.manifest.id == 'builtin.playtorriohttp' || a.baseUrl == 'builtin:playtorriohttp')) {
-      _addons.add(playTorrioHttpBuiltin);
+    if (!_addons.any((a) => a.manifest.id == 'builtin.flickhttp' || a.baseUrl == 'builtin:flickhttp')) {
+      _addons.add(flickHttpBuiltin);
       changed = true;
     }
     if (changed && _initialized) {
@@ -68,20 +68,20 @@ class AddonManager {
     return _addons.where((a) => a.isStreamsActive && !a.baseUrl.startsWith('builtin:')).toList();
   }
 
-  bool get isPlayTorrioActive {
+  bool get isFlickActive {
     _ensureBuiltInsExist();
     final p2p = _addons.firstWhere(
-      (a) => a.manifest.id == 'builtin.playtorrio' || a.baseUrl == 'builtin:playtorrio',
-      orElse: () => playTorrioBuiltin,
+      (a) => a.manifest.id == 'builtin.flick' || a.baseUrl == 'builtin:flick',
+      orElse: () => flickBuiltin,
     );
     return p2p.isStreamsActive;
   }
 
-  bool get isPlayTorrioHttpActive {
+  bool get isFlickHttpActive {
     _ensureBuiltInsExist();
     final http = _addons.firstWhere(
-      (a) => a.manifest.id == 'builtin.playtorriohttp' || a.baseUrl == 'builtin:playtorriohttp',
-      orElse: () => playTorrioHttpBuiltin,
+      (a) => a.manifest.id == 'builtin.flickhttp' || a.baseUrl == 'builtin:flickhttp',
+      orElse: () => flickHttpBuiltin,
     );
     return http.isStreamsActive;
   }
@@ -90,8 +90,8 @@ class AddonManager {
   String? getAddonLogo(String addonName) {
     _ensureBuiltInsExist();
     final nameLower = addonName.trim().toLowerCase();
-    if (nameLower == 'playtorrio' ||
-        nameLower == 'playtorriohttp' ||
+    if (nameLower == 'flick' ||
+        nameLower == 'flickhttp' ||
         nameLower.startsWith('builtin')) {
       return 'asset:assets/icon.png';
     }
@@ -106,11 +106,11 @@ class AddonManager {
     return null;
   }
 
-  static final InstalledAddon playTorrioBuiltin = InstalledAddon(
-    baseUrl: 'builtin:playtorrio',
+  static final InstalledAddon flickBuiltin = InstalledAddon(
+    baseUrl: 'builtin:flick',
     manifest: AddonManifest(
-      id: 'builtin.playtorrio',
-      name: 'PlayTorrio',
+      id: 'builtin.flick',
+      name: 'Flick',
       version: '3.0.0',
       description: 'Built-in BitTorrent P2P streaming engine (TorrServer). Plays torrents, magnets, and infohashes directly.',
       resources: ['stream'],
@@ -125,11 +125,11 @@ class AddonManager {
     enableStreams: true,
   );
 
-  static final InstalledAddon playTorrioHttpBuiltin = InstalledAddon(
-    baseUrl: 'builtin:playtorriohttp',
+  static final InstalledAddon flickHttpBuiltin = InstalledAddon(
+    baseUrl: 'builtin:flickhttp',
     manifest: AddonManifest(
-      id: 'builtin.playtorriohttp',
-      name: 'PlayTorrioHTTP',
+      id: 'builtin.flickhttp',
+      name: 'FlickHTTP',
       version: '3.0.0',
       description: 'Built-in fast HTTP stream scrapers (111477, Cinejoy, Vuflix, Movy, RiveStream, Vadapav, VidCore, VidSrc, etc.)',
       resources: ['stream'],
@@ -172,22 +172,22 @@ class AddonManager {
       }
     }
 
-    // Ensure PlayTorrio P2P engine is registered in the list
-    if (!_addons.any((a) => a.manifest.id == 'builtin.playtorrio' || a.baseUrl == 'builtin:playtorrio')) {
-      _addons.add(playTorrioBuiltin);
+    // Ensure Flick P2P engine is registered in the list
+    if (!_addons.any((a) => a.manifest.id == 'builtin.flick' || a.baseUrl == 'builtin:flick')) {
+      _addons.add(flickBuiltin);
       await _save();
     }
 
-    // Ensure PlayTorrioHTTP is registered in the list
-    if (!_addons.any((a) => a.manifest.id == 'builtin.playtorriohttp' || a.baseUrl == 'builtin:playtorriohttp')) {
-      _addons.add(playTorrioHttpBuiltin);
+    // Ensure FlickHTTP is registered in the list
+    if (!_addons.any((a) => a.manifest.id == 'builtin.flickhttp' || a.baseUrl == 'builtin:flickhttp')) {
+      _addons.add(flickHttpBuiltin);
       await _save();
     }
 
     // Sync P2P state
     final p2pAddon = _addons.firstWhere(
-      (a) => a.manifest.id == 'builtin.playtorrio' || a.baseUrl == 'builtin:playtorrio',
-      orElse: () => playTorrioBuiltin,
+      (a) => a.manifest.id == 'builtin.flick' || a.baseUrl == 'builtin:flick',
+      orElse: () => flickBuiltin,
     );
     P2pSettingsService.isP2pEnabled.value = p2pAddon.isStreamsActive;
 
@@ -273,7 +273,7 @@ class AddonManager {
   }
 
   Future<void> removeAddon(String addonId) async {
-    if (addonId == 'builtin.playtorrio' || addonId == 'builtin.playtorriohttp') {
+    if (addonId == 'builtin.flick' || addonId == 'builtin.flickhttp') {
       // For built-in providers, disable instead of deleting
       await toggleAddon(addonId, false);
       return;
@@ -290,7 +290,7 @@ class AddonManager {
         break;
       }
     }
-    if (addonId == 'builtin.playtorrio') {
+    if (addonId == 'builtin.flick') {
       await P2pSettingsService.setP2pEnabled(enabled);
     }
     MetadataService.clearCache();
@@ -313,7 +313,7 @@ class AddonManager {
         break;
       }
     }
-    if (addonId == 'builtin.playtorrio' && enableStreams != null) {
+    if (addonId == 'builtin.flick' && enableStreams != null) {
       await P2pSettingsService.setP2pEnabled(enableStreams);
     }
     MetadataService.clearCache();

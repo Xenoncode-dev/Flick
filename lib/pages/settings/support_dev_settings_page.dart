@@ -41,7 +41,7 @@ class _SupportDevSettingsPageState extends State<SupportDevSettingsPage>
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
-          'Support PlayTorrio',
+          'Support Flick',
           style: TextStyle(fontWeight: FontWeight.w800, fontSize: 19),
         ),
       ),
@@ -122,7 +122,7 @@ class _SupportDevSettingsPageState extends State<SupportDevSettingsPage>
                         ],
                       ).createShader(bounds),
                       child: const Text(
-                        'Why pay \$22/mo for Netflix when 1 click keeps PlayTorrio free?',
+                        'Why pay \$22/mo for Netflix when 1 click keeps Flick free?',
                         style: TextStyle(
                           fontFamily: 'PlayfairDisplay',
                           fontStyle: FontStyle.italic,
@@ -137,7 +137,7 @@ class _SupportDevSettingsPageState extends State<SupportDevSettingsPage>
                     const SizedBox(height: 12),
 
                     Text(
-                      'PlayTorrio has zero subscriptions, zero paywalls, and no paid tiers. I build and maintain this app entirely on my own.\n\n'
+                      'Flick has zero subscriptions, zero paywalls, and no paid tiers. I build and maintain this app entirely on my own.\n\n'
                       'Tapping the button below opens 1 quick sponsor ad in your default browser. Each click gives a few cents to support me directly so I can keep going and pay for uni!',
                       style: TextStyle(
                         fontSize: 13.5,
@@ -197,7 +197,7 @@ class _SupportDevSettingsPageState extends State<SupportDevSettingsPage>
 
                     Center(
                       child: Text(
-                        'Opens http://hai8g.com/4/11759358 in your system default browser',
+                        'Opens a sponsor ad link safely in your system default browser',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 11.5,
@@ -312,12 +312,12 @@ class _SupportDevSettingsPageState extends State<SupportDevSettingsPage>
                   children: [
                     _buildFaqItem(
                       question: 'Does supporting cost me anything?',
-                      answer: 'No. It costs you \$0. You never pay a single cent for PlayTorrio.',
+                      answer: 'No. It costs you \$0. You never pay a single cent for Flick.',
                     ),
                     Divider(color: Colors.white.withValues(alpha: 0.06), height: 24),
                     _buildFaqItem(
                       question: 'What happens when I click the button?',
-                      answer: 'It opens 1 sponsor ad page in your external browser. That single visit generates a small ad credit that directly supports me to keep working on PlayTorrio and pay for uni.',
+                      answer: 'It opens 1 sponsor ad page in your external browser. That single visit generates a small ad credit that directly supports me to keep working on Flick and pay for uni.',
                     ),
                     Divider(color: Colors.white.withValues(alpha: 0.06), height: 24),
                     _buildFaqItem(

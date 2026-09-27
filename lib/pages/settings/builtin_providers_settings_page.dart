@@ -68,7 +68,7 @@ class _BuiltinProvidersSettingsPageState extends State<BuiltinProvidersSettingsP
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
                       title: const Text('Reset Providers Order?', style: TextStyle(fontWeight: FontWeight.bold)),
                       content: const Text(
-                        'This will restore all 45 PlayTorrioHTTP providers to their default order and re-enable any disabled providers.',
+                        'This will restore all 45 FlickHTTP providers to their default order and re-enable any disabled providers.',
                         style: TextStyle(fontSize: 13.5, color: Colors.white70),
                       ),
                       actions: [
@@ -384,7 +384,7 @@ class _BuiltinProvidersSettingsPageState extends State<BuiltinProvidersSettingsP
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      'All $totalCount PlayTorrioHTTP providers are active and scraped concurrently.',
+                      'All $totalCount FlickHTTP providers are active and scraped concurrently.',
                       style: const TextStyle(fontSize: 12, color: Colors.white54),
                     ),
                   ],
@@ -396,7 +396,7 @@ class _BuiltinProvidersSettingsPageState extends State<BuiltinProvidersSettingsP
           const Divider(color: Colors.white10, height: 1),
           const SizedBox(height: 14),
           const Text(
-            'In Default mode, PlayTorrio uses its native multi-source streaming engine. All providers run simultaneously, and results are smartly sorted by video resolution (4K, 1080p, 720p) and file size.',
+            'In Default mode, Flick uses its native multi-source streaming engine. All providers run simultaneously, and results are smartly sorted by video resolution (4K, 1080p, 720p) and file size.',
             style: TextStyle(fontSize: 12.5, color: Colors.white70, height: 1.45),
           ),
           const SizedBox(height: 16),

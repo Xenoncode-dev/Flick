@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:playtorrio/models/addon/addon.dart';
-import 'package:playtorrio/services/metadata/metadata_service.dart';
+import 'package:flick/models/addon/addon.dart';
+import 'package:flick/services/metadata/metadata_service.dart';
 
 void main() {
   group('CatalogExtra Model & Manifest Parsing', () {

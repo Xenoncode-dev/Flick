@@ -623,7 +623,7 @@ class _AnimeGlassAppBar extends StatelessWidget {
               const SizedBox(width: 10),
               RichText(
                 text: TextSpan(
-                  text: 'PlayTorrio ',
+                  text: 'Flick ',
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w900,

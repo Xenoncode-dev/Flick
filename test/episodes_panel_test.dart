@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:playtorrio/models/movie/video.dart';
-import 'package:playtorrio/models/stream/stream_model.dart';
-import 'package:playtorrio/services/stream/stream_service.dart';
+import 'package:flick/models/movie/video.dart';
+import 'package:flick/models/stream/stream_model.dart';
+import 'package:flick/services/stream/stream_service.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -43,14 +43,14 @@ void main() {
         name: '4K Stream',
         title: 'Show S01E01 2160p',
         url: 'https://stream.test/s1e1.mp4',
-        addonName: 'PlayTorrioHTTP',
+        addonName: 'FlickHTTP',
       );
 
       final mockSource2 = StreamSource(
         name: '1080p Stream',
         title: 'Show S01E02 1080p',
         url: 'https://stream.test/s1e2.mp4',
-        addonName: 'PlayTorrioHTTP',
+        addonName: 'FlickHTTP',
       );
 
       cache[s1e1Key] = [mockSource1];
@@ -67,7 +67,7 @@ void main() {
   group('StreamService Targeted Scraping', () {
     test('fetchStreamsForTargetAddon returns a Stream', () {
       final stream = StreamService.fetchStreamsForTargetAddon(
-        targetAddonName: 'PlayTorrioHTTP',
+        targetAddonName: 'FlickHTTP',
         type: 'tv',
         id: 'tt123456:1:1',
         title: 'Test Show',

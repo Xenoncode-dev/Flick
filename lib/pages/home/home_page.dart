@@ -521,7 +521,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(height: 32),
                 Text(
-                  'PlayTorrio',
+                  'Flick',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: titleSize,
@@ -539,6 +539,17 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.w600,
                     color: Colors.white54,
                     letterSpacing: 2,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  'By Xenon',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: subtitleSize * 0.7,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white.withValues(alpha: 0.4),
+                    letterSpacing: 1.5,
                   ),
                 ),
               ],
@@ -596,7 +607,7 @@ class _GlassAppBar extends StatelessWidget {
             ),
             const SizedBox(width: 10),
             const Text(
-              'PlayTorrio',
+              'Flick',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w900,

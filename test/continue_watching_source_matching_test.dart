@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:playtorrio/models/continue_watching/continue_watching_item.dart';
-import 'package:playtorrio/models/stream/stream_model.dart';
-import 'package:playtorrio/services/continue_watching/continue_watching_service.dart';
+import 'package:flick/models/continue_watching/continue_watching_item.dart';
+import 'package:flick/models/stream/stream_model.dart';
+import 'package:flick/services/continue_watching/continue_watching_service.dart';
 
 void main() {
   group('Continue Watching Source Matching Tests', () {
@@ -14,32 +14,32 @@ void main() {
         totalDurationSeconds: 8400,
         lastWatchedAt: DateTime.now(),
         isTorrent: false,
-        addonName: 'PlayTorrioHTTP',
-        streamName: 'PlayTorrioHTTP',
+        addonName: 'FlickHTTP',
+        streamName: 'FlickHTTP',
         streamTitle: 'FSOnline · FileSuN · 1080p',
         streamDescription: 'FSOnline HLS Stream',
         quality: '1080p',
       );
 
       final exactMatch = StreamSource(
-        name: 'PlayTorrioHTTP',
-        addonName: 'PlayTorrioHTTP',
+        name: 'FlickHTTP',
+        addonName: 'FlickHTTP',
         title: 'FSOnline · FileSuN · 1080p',
         description: 'FSOnline HLS Stream',
         url: 'https://example.com/fsonline/master.m3u8',
       );
 
       final variantPunctuationMatch = StreamSource(
-        name: 'PlayTorrioHTTP',
-        addonName: 'PlayTorrioHTTP',
+        name: 'FlickHTTP',
+        addonName: 'FlickHTTP',
         title: 'FSOnline . FileSuN . 1080P',
         description: 'FSOnline HLS Stream',
         url: 'https://example.com/fsonline/master2.m3u8',
       );
 
       final differentScraper = StreamSource(
-        name: 'PlayTorrioHTTP',
-        addonName: 'PlayTorrioHTTP',
+        name: 'FlickHTTP',
+        addonName: 'FlickHTTP',
         title: 'VidFast · vRapid · 1080p',
         description: 'VidFast Direct Stream',
         url: 'https://example.com/vidfast/video.mp4',

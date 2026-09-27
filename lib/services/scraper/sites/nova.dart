@@ -6,13 +6,13 @@ import '../stream_scraper.dart';
 import '../../../models/stream/stream_model.dart';
 import 'tmdb_helper.dart';
 
-/// Pure-Dart Nova Stream Scraper for PlayTorrioHTTP.
+/// Pure-Dart Nova Stream Scraper for FlickHTTP.
 ///
 /// Ported 1-to-1 from Vyla Nova provider.
 /// Connects to nova-streamz.vercel.app Stremio manifest endpoints.
 class NovaScraper extends StreamScraper {
   @override
-  String get name => 'PlayTorrioHTTP';
+  String get name => 'FlickHTTP';
 
   static const _baseUrl = 'https://nova-streamz.vercel.app';
   static const _ua =
@@ -97,8 +97,8 @@ class NovaScraper extends StreamScraper {
           }
 
           yield StreamSource(
-            name: 'PlayTorrioHTTP',
-            addonName: 'PlayTorrioHTTP',
+            name: 'FlickHTTP',
+            addonName: 'FlickHTTP',
             title: 'Nova · $titleLabel',
             description: 'Nova Multi-Source Stream',
             url: streamUrl,

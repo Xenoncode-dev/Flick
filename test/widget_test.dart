@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:playtorrio/services/my_list/my_list_service.dart';
-import 'package:playtorrio/services/theme/glass_settings.dart';
+import 'package:flick/services/my_list/my_list_service.dart';
+import 'package:flick/services/theme/glass_settings.dart';
 
 void main() {
   testWidgets('App renders smoke test', (WidgetTester tester) async {
@@ -16,12 +16,12 @@ void main() {
       const MaterialApp(
         home: Scaffold(
           body: Center(
-            child: Text('PlayTorrio'),
+            child: Text('Flick'),
           ),
         ),
       ),
     );
 
-    expect(find.text('PlayTorrio'), findsOneWidget);
+    expect(find.text('Flick'), findsOneWidget);
   });
 }

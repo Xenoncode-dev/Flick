@@ -21,7 +21,7 @@ class ContinueWatchingItem {
   final DateTime lastWatchedAt;
 
   // Source fingerprint & resume specs
-  final String? addonName; // 'PlayTorrioHTTP', 'PlayTorrio', or external addon name
+  final String? addonName; // 'FlickHTTP', 'Flick', or external addon name
   final bool isTorrent;
   final String? magnetUrl;
   final String? infoHash;
@@ -91,7 +91,7 @@ class ContinueWatchingItem {
       url: isTorrent ? (magnetUrl ?? rawUrl) : rawUrl,
       infoHash: infoHash,
       fileIdx: fileIdx,
-      addonName: addonName ?? 'PlayTorrio',
+      addonName: addonName ?? 'Flick',
       headers: headers,
     );
   }
@@ -140,7 +140,7 @@ class ContinueWatchingItem {
       positionSeconds: json['positionSeconds'] is int ? json['positionSeconds'] : int.tryParse(json['positionSeconds']?.toString() ?? '') ?? 0,
       totalDurationSeconds: json['totalDurationSeconds'] is int ? json['totalDurationSeconds'] : int.tryParse(json['totalDurationSeconds']?.toString() ?? '') ?? 0,
       lastWatchedAt: json['lastWatchedAt'] != null ? (DateTime.tryParse(json['lastWatchedAt'].toString()) ?? DateTime.now()) : DateTime.now(),
-      addonName: json['addonName']?.toString() ?? 'PlayTorrio',
+      addonName: json['addonName']?.toString() ?? 'Flick',
       isTorrent: json['isTorrent'] == true,
       magnetUrl: json['magnetUrl']?.toString(),
       infoHash: json['infoHash']?.toString(),

@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/icon.png" alt="PlayTorrio" width="140"/>
+  <img src="assets/icon.png" alt="Flick" width="140"/>
 </p>
 
-<h1 align="center">PlayTorrio V3</h1>
+<h1 align="center">Flick V3</h1>
 
 <p align="center">
   Movies, TV, Anime, Manga, Audiobooks, Music — one app, no subscriptions.
@@ -18,7 +18,7 @@
 
 ## What is this?
 
-PlayTorrio is a media streaming app built with Flutter. It pulls content from a bunch of different sources on the web and lets you watch/read/listen to everything from one place. No accounts, no monthly fees.
+Flick is a media streaming app built with Flutter. It pulls content from a bunch of different sources on the web and lets you watch/read/listen to everything from one place. No accounts, no monthly fees.
 
 It handles:
 - **Movies & TV** — 45+ VOD scrapers + torrent streaming + Stremio addon support
@@ -39,15 +39,15 @@ Every tagged release triggers a CI build that produces installers for all platfo
 | macOS | DMG + ZIP (both Apple Silicon and Intel) |
 | iOS | Sideloadable IPA (unsigned) |
 
-Check the [Releases](https://github.com/ayman708-UX/PlayTorrioV3/releases) page.
+Check the [Releases](https://github.com/Xenon/Flick/releases) page.
 
 ## Building from source
 
 You'll need Flutter 3.x (Dart 3.11+).
 
 ```bash
-git clone https://github.com/ayman708-UX/PlayTorrioV3.git
-cd PlayTorrioV3
+git clone https://github.com/Xenon/Flick.git
+cd Flick
 flutter pub get
 flutter run
 ```
@@ -152,7 +152,7 @@ lib/
 
 ## Legal
 
-PlayTorrio is a media player and aggregator. It doesn't host or store any content. Everything comes from third-party sources. You're responsible for making sure you have the right to access whatever you're streaming in your jurisdiction. This project is for educational purposes.
+Flick is a media player and aggregator. It doesn't host or store any content. Everything comes from third-party sources. You're responsible for making sure you have the right to access whatever you're streaming in your jurisdiction. This project is for educational purposes.
 
 ## License
 
@@ -161,5 +161,5 @@ PlayTorrio is a media player and aggregator. It doesn't host or store any conten
 ---
 
 <p align="center">
-  Built by <a href="https://github.com/ayman708-UX">Ayman</a>
+  Built by <a href="https://github.com/Xenon">Xenon</a>
 </p>

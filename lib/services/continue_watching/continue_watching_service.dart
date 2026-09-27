@@ -450,7 +450,7 @@ class ContinueWatchingService {
   /// - For First Launch from Trakt/Simkl: Opens WatchScreen to let user manually pick source, then auto-seeks.
   /// - For Anime: Rescrapes streams with AnimeScraperService and auto-seeks.
   /// - For Torrents: launches directly using saved magnet and fileIdx (no rescraping).
-  /// - For PlayTorrioHTTP & Addons: rescrapes and selects the best matching healthy stream.
+  /// - For FlickHTTP & Addons: rescrapes and selects the best matching healthy stream.
   /// - Fallback: opens WatchScreen or AnimeStreamSheet if source died.
   static Future<void> resumePlayback(
     BuildContext context,
@@ -989,7 +989,7 @@ class ContinueWatchingService {
       }
     }
 
-    // 4. Source Card Line 1: Addon Provider Match (e.g. "PlayTorrioHTTP")
+    // 4. Source Card Line 1: Addon Provider Match (e.g. "FlickHTTP")
     final targetAddon = (target.addonName ?? '').trim().toLowerCase();
     final candidateAddon = candidate.addonName.trim().toLowerCase();
     if (targetAddon.isNotEmpty && targetAddon == candidateAddon) {

@@ -284,8 +284,8 @@ class _SettingsPageState extends State<SettingsPage> {
     final traktAuth = await TraktService.instance.isAuthenticated();
     final simklAuth = await SimklService.instance.isAuthenticated();
     final pkg = await PackageInfo.fromPlatform().catchError((_) => PackageInfo(
-          appName: 'PlayTorrio',
-          packageName: 'com.playtorrio',
+          appName: 'Flick',
+          packageName: 'com.flick',
           version: '1.1.6',
           buildNumber: '17',
         ));
@@ -502,7 +502,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
               const SizedBox(height: 12),
 
-              // 4. Built-in Providers (PlayTorrioHTTP)
+              // 4. Built-in Providers (FlickHTTP)
               ListenableBuilder(
                 listenable: BuiltinProvidersSettingsService.instance,
                 builder: (context, _) {
@@ -511,7 +511,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     icon: Icons.dns_rounded,
                     iconColor: isCustom ? const Color(0xFF7C5CFF) : const Color(0xFF10B981),
                     title: 'Built-in Providers',
-                    subtitle: 'PlayTorrioHTTP streaming sources, priority order & toggles',
+                    subtitle: 'FlickHTTP streaming sources, priority order & toggles',
                     badgeText: isCustom ? 'Custom' : 'Default',
                     badgeColor: isCustom ? const Color(0xFF7C5CFF) : const Color(0xFF10B981),
                     onTap: () => _navigateTo(const BuiltinProvidersSettingsPage()),
@@ -521,7 +521,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
               const SizedBox(height: 12),
 
-              // 4. Built-in P2P Torrent Source Toggle (PlayTorrio)
+              // 4. Built-in P2P Torrent Source Toggle (Flick)
               ValueListenableBuilder<bool>(
                 valueListenable: P2pSettingsService.isP2pEnabled,
                 builder: (context, isP2p, _) {
@@ -530,8 +530,8 @@ class _SettingsPageState extends State<SettingsPage> {
                     iconColor: isP2p ? const Color(0xFFF59E0B) : Colors.white54,
                     title: 'Built-in P2P Torrent Source',
                     subtitle: isP2p
-                        ? 'PlayTorrio torrent swarms (Knaben, TorrentGalaxy) active'
-                        : 'P2P disabled. Using only direct HTTP streaming (PlayTorrioHTTP)',
+                        ? 'Flick torrent swarms (Knaben, TorrentGalaxy) active'
+                        : 'P2P disabled. Using only direct HTTP streaming (FlickHTTP)',
                     badgeText: isP2p ? 'P2P Active' : 'HTTP Only',
                     badgeColor: isP2p ? const Color(0xFFF59E0B) : const Color(0xFF10B981),
                     value: isP2p,
@@ -672,11 +672,11 @@ class _SettingsPageState extends State<SettingsPage> {
 
               const SizedBox(height: 12),
 
-              // 9. About PlayTorrio
+              // 9. About Flick
               _SettingsCategoryTile(
                 icon: Icons.info_outline_rounded,
                 iconColor: Colors.white70,
-                title: 'About PlayTorrio',
+                title: 'About Flick',
                 subtitle: 'Architecture, video engine, and credits',
                 onTap: () => _navigateTo(const AboutSettingsPage()),
               ),

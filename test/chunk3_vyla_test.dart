@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:playtorrio/services/scraper/sites/lookmovie.dart';
-import 'package:playtorrio/services/scraper/sites/hexa.dart';
-import 'package:playtorrio/services/scraper/sites/bcine.dart';
-import 'package:playtorrio/services/scraper/sites/nova.dart';
+import 'package:flick/services/scraper/sites/lookmovie.dart';
+import 'package:flick/services/scraper/sites/hexa.dart';
+import 'package:flick/services/scraper/sites/bcine.dart';
+import 'package:flick/services/scraper/sites/nova.dart';
 
 class _AllowAllHttpOverrides extends HttpOverrides {}
 
@@ -27,7 +27,7 @@ void main() {
       }
       expect(sources, isNotEmpty);
       expect(sources.first.url, startsWith('http'));
-      expect(sources.first.addonName, 'PlayTorrioHTTP');
+      expect(sources.first.addonName, 'FlickHTTP');
     }, timeout: const Timeout(Duration(seconds: 30)));
 
     test('LookMovie scraper queries for Fight Club', () async {

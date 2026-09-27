@@ -7,8 +7,8 @@ class AnimeLibraryService extends ChangeNotifier {
   static final AnimeLibraryService instance = AnimeLibraryService._internal();
   AnimeLibraryService._internal();
 
-  static const String _watchlistKey = 'playtorrio_anime_watchlist_v1';
-  static const String _historyKey = 'playtorrio_anime_history_v1';
+  static const String _watchlistKey = 'flick_anime_watchlist_v1';
+  static const String _historyKey = 'flick_anime_history_v1';
 
   final List<AnimeWatchlistItem> _watchlist = [];
   final Map<int, AnimeWatchlistItem> _progressMap = {};

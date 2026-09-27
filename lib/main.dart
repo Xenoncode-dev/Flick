@@ -73,17 +73,17 @@ void main() async {
     DiscordRpcService.instance.initialize(),
     BuiltinProvidersSettingsService.instance.init(),
   ]);
-  runApp(const PlayTorrioApp());
+  runApp(const FlickApp());
 }
 
-class PlayTorrioApp extends StatefulWidget {
-  const PlayTorrioApp({super.key});
+class FlickApp extends StatefulWidget {
+  const FlickApp({super.key});
 
   @override
-  State<PlayTorrioApp> createState() => _PlayTorrioAppState();
+  State<FlickApp> createState() => _FlickAppState();
 }
 
-class _PlayTorrioAppState extends State<PlayTorrioApp>
+class _FlickAppState extends State<FlickApp>
     with WidgetsBindingObserver {
   static bool _hasCheckedInitialUpdate = false;
   static bool _isShowingUpdateDialog = false;
@@ -143,7 +143,7 @@ class _PlayTorrioAppState extends State<PlayTorrioApp>
       builder: (context, palette, _) {
         return MaterialApp(
           navigatorKey: navigatorKey,
-          title: 'PlayTorrio',
+          title: 'Flick',
           debugShowCheckedModeBanner: false,
           theme: AppThemeService.createThemeData(palette),
           scrollBehavior: const MaterialScrollBehavior().copyWith(

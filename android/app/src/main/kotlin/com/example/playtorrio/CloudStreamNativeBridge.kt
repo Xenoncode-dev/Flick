@@ -1,4 +1,4 @@
-package com.example.playtorrio
+package com.example.flick
 
 import android.app.Activity
 import android.content.Context
@@ -95,7 +95,7 @@ class CloudStreamNativeBridge(private val context: Context, private val activity
                 return false
             }
 
-            val cacheApkName = "playtorrio_cs_runtime.apk"
+            val cacheApkName = "flick_cs_runtime.apk"
             val cacheApk = File(context.filesDir, cacheApkName)
 
             if (!cacheApk.exists() || cacheApk.length() != originalApk.length()) {

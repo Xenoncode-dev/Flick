@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:playtorrio/services/scraper/sites/hindmoviez.dart';
-import 'package:playtorrio/services/scraper/builtin_providers_settings_service.dart';
-import 'package:playtorrio/services/scraper/stream_scraper.dart';
+import 'package:flick/services/scraper/sites/hindmoviez.dart';
+import 'package:flick/services/scraper/builtin_providers_settings_service.dart';
+import 'package:flick/services/scraper/stream_scraper.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -11,7 +11,7 @@ void main() {
   group('HindMoviezScraper Unit & Logic Tests', () {
     test('HindMoviezScraper metadata and properties', () {
       final scraper = HindMoviezScraper();
-      expect(scraper.name, equals('PlayTorrioHTTP'));
+      expect(scraper.name, equals('FlickHTTP'));
       expect(scraper.providerId, equals('hindmoviez'));
       expect(scraper.providerName, equals('HindMoviez'));
     });

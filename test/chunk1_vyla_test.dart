@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:playtorrio/services/scraper/sites/vidup.dart';
-import 'package:playtorrio/services/scraper/sites/flaxmovies.dart';
-import 'package:playtorrio/services/scraper/sites/vidgod.dart';
-import 'package:playtorrio/services/scraper/sites/vidfast.dart';
-import 'package:playtorrio/services/scraper/sites/peestream.dart';
+import 'package:flick/services/scraper/sites/vidup.dart';
+import 'package:flick/services/scraper/sites/flaxmovies.dart';
+import 'package:flick/services/scraper/sites/vidgod.dart';
+import 'package:flick/services/scraper/sites/vidfast.dart';
+import 'package:flick/services/scraper/sites/peestream.dart';
 
 class _AllowAllHttpOverrides extends HttpOverrides {}
 
@@ -28,7 +28,7 @@ void main() {
       }
       expect(sources, isNotEmpty);
       expect(sources.first.url, startsWith('http'));
-      expect(sources.first.addonName, 'PlayTorrioHTTP');
+      expect(sources.first.addonName, 'FlickHTTP');
     }, timeout: const Timeout(Duration(seconds: 30)));
 
     test('FlaxMovies scraper fetches streams for Fight Club', () async {
@@ -46,7 +46,7 @@ void main() {
       }
       expect(sources, isNotEmpty);
       expect(sources.first.url, startsWith('http'));
-      expect(sources.first.addonName, 'PlayTorrioHTTP');
+      expect(sources.first.addonName, 'FlickHTTP');
     }, timeout: const Timeout(Duration(seconds: 30)));
 
     test('VidGod scraper fetches streams for Fight Club', () async {
@@ -64,7 +64,7 @@ void main() {
       }
       expect(sources, isNotEmpty);
       expect(sources.first.url, startsWith('http'));
-      expect(sources.first.addonName, 'PlayTorrioHTTP');
+      expect(sources.first.addonName, 'FlickHTTP');
     }, timeout: const Timeout(Duration(seconds: 30)));
 
     test('VidFast scraper fetches streams for Fight Club', () async {
@@ -82,7 +82,7 @@ void main() {
       }
       expect(sources, isNotEmpty);
       expect(sources.first.url, startsWith('http'));
-      expect(sources.first.addonName, 'PlayTorrioHTTP');
+      expect(sources.first.addonName, 'FlickHTTP');
     }, timeout: const Timeout(Duration(seconds: 30)));
 
     test('PeeStream scraper fetches streams for Fight Club', () async {
@@ -100,7 +100,7 @@ void main() {
       }
       expect(sources, isNotEmpty);
       expect(sources.first.url, startsWith('http'));
-      expect(sources.first.addonName, 'PlayTorrioHTTP');
+      expect(sources.first.addonName, 'FlickHTTP');
     }, timeout: const Timeout(Duration(seconds: 30)));
   });
 }

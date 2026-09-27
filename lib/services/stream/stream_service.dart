@@ -167,7 +167,7 @@ class StreamService {
     final currentSession = _streamSessionId;
 
     final addons = AddonManager.instance.activeStreamAddons;
-    final isHttpActive = AddonManager.instance.isPlayTorrioHttpActive;
+    final isHttpActive = AddonManager.instance.isFlickHttpActive;
     final csExtensions = CloudStreamManager.instance.activeExtensions;
     final hasCs = csExtensions.isNotEmpty;
 
@@ -237,7 +237,7 @@ class StreamService {
       _activeSubscriptions.add(sub);
     }
 
-    // Local PlayTorrioHTTP scrapers (if active)
+    // Local FlickHTTP scrapers (if active)
     if (isHttpActive) {
       final isImdb = id.startsWith('tt');
       final cleanImdbId = isImdb ? id.split(':')[0] : null;
@@ -281,8 +281,8 @@ class StreamService {
 
   /// Fetches streams specifically for a targeted provider/addon that was previously used by the user.
   ///
-  /// - If [targetAddonName] == 'PlayTorrioHTTP': Only scrapes built-in alive HTTP scrapers.
-  /// - If [targetAddonName] == 'PlayTorrio': Only scrapes built-in torrent scrapers.
+  /// - If [targetAddonName] == 'FlickHTTP': Only scrapes built-in alive HTTP scrapers.
+  /// - If [targetAddonName] == 'Flick': Only scrapes built-in torrent scrapers.
   /// - If [targetAddonName] matches a Stremio addon (e.g. 'Torrentio', 'CyberFlix'): Only calls that specific addon.
   static Stream<StreamSource> fetchStreamsForTargetAddon({
     required String targetAddonName,
@@ -369,12 +369,12 @@ class StreamService {
       );
     }
 
-    // Check if targeting built-in PlayTorrioHTTP / PlayTorrio
-    final isLocalPlayTorrio = normalizedTarget == 'playtorriohttp' ||
-        normalizedTarget == 'playtorrio' ||
-        normalizedTarget.contains('playtorrio');
+    // Check if targeting built-in FlickHTTP / Flick
+    final isLocalFlick = normalizedTarget == 'flickhttp' ||
+        normalizedTarget == 'flick' ||
+        normalizedTarget.contains('flick');
 
-    if (isLocalPlayTorrio) {
+    if (isLocalFlick) {
       _registerBuiltInScrapers();
 
       final isImdb = id.startsWith('tt');
@@ -390,13 +390,13 @@ class StreamService {
       ).listen(
         (source) {
           if (!controller.isClosed) {
-            // If target was specifically PlayTorrioHTTP, only yield HTTP streams
-            if (normalizedTarget == 'playtorriohttp' &&
+            // If target was specifically FlickHTTP, only yield HTTP streams
+            if (normalizedTarget == 'flickhttp' &&
                 (source.infoHash != null && source.infoHash!.isNotEmpty)) {
               return;
             }
-            // If target was specifically PlayTorrio (torrent), only yield torrent streams
-            if (normalizedTarget == 'playtorrio' &&
+            // If target was specifically Flick (torrent), only yield torrent streams
+            if (normalizedTarget == 'flick' &&
                 (source.infoHash == null || source.infoHash!.isEmpty)) {
               return;
             }

@@ -5,7 +5,7 @@ import '../../services/home/home_page_settings.dart';
 
 /// Helper class to open the sponsor ad link in the user's default browser.
 abstract final class SupportDevHelper {
-  static const String sponsorUrl = 'http://hai8g.com/4/11759358';
+  static const String sponsorUrl = 'https://www.profitableratecpmnetwork.com/gv2qwxiabp?key=db756e8f84642016182b97d8e34a3827';
 
   static Future<void> openSponsorLink(BuildContext context) async {
     try {
@@ -62,8 +62,8 @@ abstract final class SupportDevHelper {
           ],
         ),
         content: const Text(
-          'PlayTorrio is completely free with zero subscriptions and zero paywalls.\n\n'
-          'I build and maintain this project on my own. Tapping this opens 1 quick sponsor ad in your default browser — every click helps support me so I can keep developing PlayTorrio and pay for uni!\n\n'
+          'Flick is completely free with zero subscriptions and zero paywalls.\n\n'
+          'I build and maintain this project on my own. Tapping this opens 1 quick sponsor ad in your default browser — every click helps support me so I can keep developing Flick and pay for uni!\n\n'
           'Thank you so much for the support! ❤️',
           style: TextStyle(
             color: Colors.white70,
@@ -309,7 +309,7 @@ class _SupportHeroSlideState extends State<SupportHeroSlide>
                       ],
                     ).createShader(bounds),
                     child: Text(
-                      'Why pay \$22/mo for Netflix when 1 click keeps PlayTorrio free?',
+                      'Why pay \$22/mo for Netflix when 1 click keeps Flick free?',
                       style: TextStyle(
                         fontFamily: 'PlayfairDisplay',
                         fontStyle: FontStyle.italic,
@@ -332,7 +332,7 @@ class _SupportHeroSlideState extends State<SupportHeroSlide>
                         maxWidth: isCompact ? double.infinity : 600,
                       ),
                       child: Text(
-                        'Takes 5 seconds. Opens 1 sponsor ad in your browser. Zero subscriptions forever. Every click directly supports me to keep developing PlayTorrio and pay for uni.',
+                        'Takes 5 seconds. Opens 1 sponsor ad in your browser. Zero subscriptions forever. Every click directly supports me to keep developing Flick and pay for uni.',
                         maxLines: heroStyle == HeroStyle.compact ? 2 : 3,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(

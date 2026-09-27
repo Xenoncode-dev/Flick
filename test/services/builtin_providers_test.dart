@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:playtorrio/models/stream/stream_model.dart';
-import 'package:playtorrio/services/scraper/builtin_providers_settings_service.dart';
+import 'package:flick/models/stream/stream_model.dart';
+import 'package:flick/services/scraper/builtin_providers_settings_service.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -102,7 +102,7 @@ void main() {
       // Create stream items:
       // CineSrc has lower quality (720p, 500MB)
       final cineStream = StreamSource(
-        addonName: 'PlayTorrioHTTP',
+        addonName: 'FlickHTTP',
         providerId: 'cinesrc',
         providerName: 'CineSrc',
         title: 'CineSrc · Direct · 720p',
@@ -111,7 +111,7 @@ void main() {
 
       // Dulo has higher quality (4K, 25GB)
       final duloStream = StreamSource(
-        addonName: 'PlayTorrioHTTP',
+        addonName: 'FlickHTTP',
         providerId: 'dulo',
         providerName: 'Dulo',
         title: 'Dulo · Source 1 · 4K',
@@ -138,19 +138,19 @@ void main() {
 
     test('detectProviderId identifies providers from title or description fallback', () {
       final stream1 = StreamSource(
-        addonName: 'PlayTorrioHTTP',
+        addonName: 'FlickHTTP',
         title: 'CineSrc · Direct Master · 1080p',
       );
       expect(BuiltinProvidersSettingsService.detectProviderId(stream1), 'cinesrc');
 
       final stream2 = StreamSource(
-        addonName: 'PlayTorrioHTTP',
+        addonName: 'FlickHTTP',
         title: 'Videasy Server 1 · 1080p',
       );
       expect(BuiltinProvidersSettingsService.detectProviderId(stream2), 'videasy');
 
       final stream3 = StreamSource(
-        addonName: 'PlayTorrioHTTP',
+        addonName: 'FlickHTTP',
         title: '111477 · Direct · 1080p',
       );
       expect(BuiltinProvidersSettingsService.detectProviderId(stream3), 'a111477');

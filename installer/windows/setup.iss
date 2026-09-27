@@ -1,15 +1,15 @@
 ; ──────────────────────────────────────────────────────────────────────────────
-;  PlayTorrio — Windows Installer (Inno Setup 6)
+;  Flick — Windows Installer (Inno Setup 6)
 ;  Built by CI from: build\windows\x64\runner\Release\
 ; ──────────────────────────────────────────────────────────────────────────────
 
-#define MyAppName      "PlayTorrio"
+#define MyAppName      "Flick"
 #ifndef MyAppVersion
 #define MyAppVersion   "1.1.6"
 #endif
-#define MyAppPublisher "ayman708-UX"
-#define MyAppExeName   "playtorrio.exe"
-#define MyAppURL       "https://github.com/ayman708-UX/PlayTorrioV3"
+#define MyAppPublisher "Xenon"
+#define MyAppExeName   "flick.exe"
+#define MyAppURL       "https://github.com/Xenon/Flick"
 
 [Setup]
 AppId={{9B8C7D6E-5F4E-3D2C-1B0A-9F8E7D6C5B4A}
@@ -23,7 +23,7 @@ DefaultGroupName={#MyAppName}
 UninstallDisplayIcon={app}\{#MyAppExeName}
 SetupIconFile=..\..\windows\runner\resources\app_icon.ico
 OutputDir=Output
-OutputBaseFilename=PlayTorrio-Windows-Setup
+OutputBaseFilename=Flick-Windows-Setup
 Compression=lzma2/ultra64
 SolidCompression=yes
 ArchitecturesInstallIn64BitMode=x64compatible

@@ -539,7 +539,7 @@ class IptvScraper {
   static bool _isLoadingCloudPortals = false;
 
   static const _catalogSubs = ['IPTV_ZONENEW', 'FreeIPTV', 'iptvguru', 'IPTVfree'];
-  static const _oauthUa = 'PlayTorrio/1.3.6 (by /u/PlayTorrioApp)';
+  static const _oauthUa = 'Flick/1.3.6 (by /u/FlickApp)';
   static const _oauthClientIds = [
     'ohXpoqrZYub1kg', // Slide for Reddit
     'NOe2iKrPPzwscA', // RedReader
@@ -548,7 +548,7 @@ class IptvScraper {
   static String? _oauthToken;
   static DateTime? _oauthTokenExpiry;
   static int _oauthClientIdx = 0;
-  static const _ua = 'Mozilla/5.0 (Linux; Android 11; PlayTorrio) '
+  static const _ua = 'Mozilla/5.0 (Linux; Android 11; Flick) '
       'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0 Safari/537.36';
 
   static const _pasteDomains = [

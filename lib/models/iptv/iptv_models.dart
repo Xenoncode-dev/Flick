@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Models ported from PlayTorrio TV IPTV system.
+// Models ported from Flick TV IPTV system.
 // Pure data classes - no heavy dependencies.
 
 /// Raw scraped Xtream-Codes portal credentials (unverified).

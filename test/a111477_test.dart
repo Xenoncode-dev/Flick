@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:playtorrio/services/scraper/sites/a111477.dart';
+import 'package:flick/services/scraper/sites/a111477.dart';
 
 class _AllowAllHttpOverrides extends HttpOverrides {}
 
@@ -28,7 +28,7 @@ void main() {
 
     expect(movieSources, isNotEmpty);
     expect(movieSources.first.url, startsWith('http'));
-    expect(movieSources.first.addonName, 'PlayTorrioHTTP');
+    expect(movieSources.first.addonName, 'FlickHTTP');
 
     print('\nTesting 111477 for series: Breaking Bad S01E01 (tt0903747)...');
     final tvStream = scraper.scrapeStream(
@@ -49,6 +49,6 @@ void main() {
 
     expect(tvSources, isNotEmpty);
     expect(tvSources.first.url, startsWith('http'));
-    expect(tvSources.first.addonName, 'PlayTorrioHTTP');
+    expect(tvSources.first.addonName, 'FlickHTTP');
   });
 }
